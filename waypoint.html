@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Waypoint — Case study · Aarav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Outfit:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --hero:#E0322B; --hero-hi:#F2574A; --hero-lo:#8E1016;
+  --cream:#FFF1EC; --blush:#FFD9CF;
+  --ink:#130A0B; --ink-2:#1C1011; --ink-3:#2A191A; --line:#3A2425;
+  --text:#F7E9E5; --muted:#B89D98; --red:#FF4B3E;
+  --script:"Yellowtail", "Brush Script MT", cursive;
+  --sans:"Outfit", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --gutter:clamp(16px,4vw,56px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--ink); color:var(--text); font:400 17px/1.6 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cream); outline-offset:3px; border-radius:8px}
+.wrap{max-width:900px; margin-inline:auto; padding-inline:var(--gutter)}
+.logo{display:inline-block; margin:calc(env(safe-area-inset-top, 0px) + 26px) 0 0; font:400 34px/1 var(--script); color:var(--cream); text-decoration:none}
+.back{font:400 13px var(--mono); letter-spacing:.1em; color:var(--muted); text-decoration:none; display:inline-flex; gap:8px; align-items:center}
+.back:hover{color:var(--red)}
+.kicker{font:500 12px/1 var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin:0 0 18px}
+h1{font:800 clamp(40px,6.4vw,84px)/1.02 var(--sans); letter-spacing:-.035em; margin:14px 0 0; text-wrap:balance}
+h1 .s{font:400 1.12em/1 var(--script); letter-spacing:0; color:var(--red)}
+.lede{font:300 clamp(19px,2.1vw,25px)/1.5 var(--sans); color:var(--text); max-width:56ch; margin:22px 0 0}
+.hero-band{background:radial-gradient(ellipse 90% 120% at 80% 0%, #1D6B67, #0F4C4A 45%, #062A29 130%); color:var(--cream); padding-bottom:clamp(48px,7vw,90px)}
+.hero-band .kicker{color:#FFD66B}
+.hero-band h1 .s{color:#FFD66B}
+.hero-band .back{color:rgba(255,241,236,.7)}
+.hero-band .back:hover{color:#fff}
+.meta-strip{display:flex; flex-wrap:wrap; gap:10px 34px; margin-top:34px; font:400 13px var(--mono); color:rgba(255,241,236,.85)}
+.meta-strip b{display:block; font-weight:500; letter-spacing:.14em; text-transform:uppercase; font-size:11px; color:rgba(255,241,236,.6); margin-bottom:4px}
+section{padding-block:clamp(48px,7vw,88px)}
+h2{font:700 clamp(26px,3.4vw,40px)/1.15 var(--sans); letter-spacing:-.025em; margin:0 0 18px}
+h2 .n{font:500 13px var(--mono); color:#FFD66B; letter-spacing:.16em; display:block; margin-bottom:12px; text-transform:uppercase}
+p{margin:0 0 18px; max-width:64ch}
+p b, li b{color:var(--cream); font-weight:600}
+ul.dots{list-style:none; padding:0; margin:0 0 18px; display:grid; gap:12px}
+ul.dots li{position:relative; padding-left:24px; max-width:62ch}
+ul.dots li::before{content:""; position:absolute; left:2px; top:.55em; width:8px; height:8px; border-radius:50%; background:#FFD66B; box-shadow:0 0 0 3px rgba(255,214,107,.18)}
+.stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:8px 0 0}
+.stats div{background:var(--ink-2); border:1px solid var(--line); border-radius:20px; padding:24px}
+.stats .num{font:800 clamp(28px,3.4vw,44px)/1 var(--sans); letter-spacing:-.03em; color:var(--cream)}
+.stats .lbl{font:400 12px var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:10px}
+figure{margin:26px 0}
+figure .cover{aspect-ratio:16/9; border-radius:24px; overflow:hidden; display:grid; place-items:center; background:#0F4C4A; border:1px solid var(--line)}
+figure .cover svg{width:80%; height:auto}
+figcaption{font:400 13px var(--mono); color:var(--muted); margin-top:12px}
+blockquote{margin:26px 0; padding:0 0 0 22px; border-left:3px solid #FFD66B; font:300 clamp(19px,2vw,23px)/1.5 var(--sans); color:var(--cream); max-width:52ch}
+.tags{display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:8px 0 0; padding:0}
+.tags li{font:400 12px/1 var(--mono); padding:8px 12px; border-radius:999px; background:var(--ink-2); border:1px solid var(--line); color:var(--muted)}
+.nav-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-block:34px 60px; border-top:1px solid var(--line); font:600 13px/1 var(--sans); letter-spacing:.14em; text-transform:uppercase}
+.nav-row a{text-decoration:none; color:var(--muted); display:inline-flex; gap:10px; align-items:center}
+.nav-row a:hover{color:var(--cream)}
+footer{padding-block:0 44px; font:400 13px var(--mono); color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero-band">
+  <div class="wrap">
+    <a class="logo" href="index.html">Aarav</a>
+    <p style="margin-top:34px"><a class="back" href="index.html#work">← All work</a></p>
+    <p class="kicker">Case study · 2024</p>
+    <h1>Way<span class="s">point</span></h1>
+    <p class="lede">A trip planner that keeps working where the signal doesn't — shared itineraries, offline maps, one tiny PWA.</p>
+    <div class="meta-strip">
+      <span><b>Role</b>Solo side project</span>
+      <span><b>Timeline</b>Jun 2023 → ongoing</span>
+      <span><b>Growth</b>0 → 12k monthly users</span>
+      <span><b>Status</b>Live, community-driven</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+<section>
+  <h2><span class="n">01 · The problem</span>Day two in the Himalayas breaks most travel apps</h2>
+  <p>The pattern I kept seeing on group trips: one person plans everything in a doc, everyone else improvises from screenshots, and map apps die the moment the road runs out of towers. Existing planners were either collaborative but cloud-bound, or offline but single-player.</p>
+  <p>Waypoint's promise combined both: <b>collaborative planning that degrades gracefully to zero bars</b> — and installs from a URL, no app store, so it works on any phone a traveller carries.</p>
+  <div class="stats">
+    <div><div class="num">12k</div><div class="lbl">Monthly active users</div></div>
+    <div><div class="num">60 fps</div><div class="lbl">Offline map rendering</div></div>
+    <div><div class="num">120 KB</div><div class="lbl">Full client, gzipped</div></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">02 · How it works</span>Precache the route, not the whole world</h2>
+  <figure>
+    <div class="cover"><svg viewBox="0 0 260 170" aria-hidden="true"><g fill="none" stroke="#1D6B67" stroke-width="1.5"><path d="M0 40 Q80 20 140 50 T260 30"/><path d="M0 90 Q70 70 130 100 T260 80"/><path d="M0 140 Q90 120 150 150 T260 130"/></g><path d="M30 130 C70 60 120 140 160 80 S220 50 232 36" fill="none" stroke="#FFD66B" stroke-width="3" stroke-dasharray="7 7"/><circle cx="30" cy="130" r="7" fill="#FFD66B"/><circle cx="232" cy="36" r="9" fill="#FF6A5A" stroke="#FFF1EC" stroke-width="3"/></svg></div>
+    <figcaption>An itinerary corridor with pre-cached vector tiles — the dashed path is exactly what gets stored on-device.</figcaption>
+  </figure>
+  <ul class="dots">
+    <li><b>Corridor caching:</b> when an itinerary is saved, Waypoint computes a buffer around each day's route and downloads only those Mapbox vector tiles — typically <b>18&nbsp;MB</b> for a week in Himachal, versus gigabytes for region downloads.</li>
+    <li><b>Collaboration:</b> Supabase Realtime row subscriptions drive presence cursors and item-level edits, so four friends can shuffle the same day without stomping on each other.</li>
+    <li><b>Size discipline:</b> Svelte's compile-time reactivity keeps the whole client under <b>120&nbsp;KB</b> gzipped; the service worker, cache eviction and UI all fit inside it.</li>
+    <li><b>Install anywhere:</b> one codebase ships as PWA on iOS, Android and desktop — including the add-to-homescreen flow Apple makes deliberately awkward.</li>
+  </ul>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">03 · Hardest problem</span>Cache policy when travellers are irrational</h2>
+  <p>Users build a trip, then change it completely three days before flying — after their last reliable wifi. Naive caching either wasted mobile data on routes never flown or evicted tiles mid-trek. The solution was a <b>confidence score per itinerary segment</b>: booked stays and flights pin tiles permanently, speculative days get soft-evicted, and the app nags with a one-tap "final sync" whenever strong wifi appears before departure.</p>
+  <blockquote>"It was the only app that worked in Pin Valley." — user review after a Spiti circuit trip</blockquote>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">04 · Outcome &amp; lessons</span>From side project to commons</h2>
+  <ul class="dots">
+    <li><b>12k monthly users</b>; hit #4 on Hacker News and r/travel within the first year.</li>
+    <li><b>1,900 GitHub stars</b> and <b>40 community route packs</b> (Ladakh, Alps, Rajasthan) that act as ready-made templates for new users.</li>
+    <li>Lesson learned: PWAs are judged by their worst platform. Budget an extra month purely for iOS quirks — storage quotas especially.</li>
+    <li>Next: GPX import/export and a shareable "live on trip" view for families back home.</li>
+  </ul>
+  <ul class="tags"><li>PWA</li><li>Mapbox</li><li>Supabase</li><li>Svelte</li><li>Service Workers</li></ul>
+</section>
+
+<div class="nav-row">
+  <a href="kirana-cloud.html">← Previous: Kirana Cloud</a>
+  <a href="inkwell.html">Next: Inkwell →</a>
+</div>
+<footer>© 2026 Aarav · Placeholder copy — replace metrics and quotes with real project facts.</footer>
+</main>
+</body>
+</html>
