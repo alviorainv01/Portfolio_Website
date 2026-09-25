@@ -157,6 +157,17 @@ h2 .s{font:400 1.12em/1 var(--script); letter-spacing:0; color:var(--red)}
 .card h3{font:600 clamp(22px,2.2vw,28px)/1.1 var(--sans); letter-spacing:-.02em; margin:0}
 .card .yr{font:400 13px var(--mono); color:var(--muted)}
 .card p{margin:0; color:var(--muted); max-width:48ch}
+.card .role{font:500 13px/1.4 var(--mono); letter-spacing:.06em; color:var(--red); margin:0}
+.highlights{list-style:none; margin:2px 0 0; padding:0; display:grid; gap:10px}
+.highlights li{position:relative; padding-left:22px; font-size:15px; line-height:1.5; color:#D9C2BD; max-width:52ch}
+.highlights li::before{content:""; position:absolute; left:2px; top:.55em; width:8px; height:8px; border-radius:50%; background:var(--hero); box-shadow:0 0 0 3px rgba(255,75,62,.18)}
+.highlights b{color:var(--cream); font-weight:600}
+.links{display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:2px; font:400 13px var(--mono)}
+.links a{text-underline-offset:4px; text-decoration-thickness:1px; color:var(--text)}
+.links a:hover{color:var(--red)}
+.card .more{font:600 13px/1 var(--sans); letter-spacing:.14em; text-transform:uppercase; color:var(--cream); display:inline-flex; align-items:center; gap:8px}
+.card .more::after{content:"→"; transition:transform .3s cubic-bezier(.3,1.5,.5,1)}
+.card:hover .more::after{transform:translateX(6px)}
 .tags{display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:0; padding:0}
 .tags li{font:400 12px/1 var(--mono); padding:8px 12px; border-radius:999px; background:var(--ink-2); border:1px solid var(--line); color:var(--muted)}
 .c1{background:linear-gradient(160deg,#1E1B3A,#0E0C1F)}
@@ -484,30 +495,66 @@ pre.prompt{white-space:pre-wrap; font:400 12.5px/1.6 var(--mono); background:var
     <p>Four projects from 2023 to 2026. Code and case studies on request.</p>
   </div>
   <div class="work">
-    <a class="card" href="#contact">
+    <a class="card" href="pulseboard.html">
       <div class="cover c1"><div class="dash"><b>Active users <i>▲ 18.4%</i></b>
         <svg viewBox="0 0 240 70" aria-hidden="true"><path d="M0 60 L30 52 L60 56 L90 38 L120 42 L150 24 L180 30 L210 12 L240 16 L240 70 L0 70 Z" fill="#6BF0B4" opacity=".14"/><path d="M0 60 L30 52 L60 56 L90 38 L120 42 L150 24 L180 30 L210 12 L240 16" fill="none" stroke="#6BF0B4" stroke-width="2.5"/><circle cx="240" cy="16" r="4" fill="#6BF0B4"/></svg></div></div>
       <div class="card-meta"><h3>Pulseboard</h3><span class="yr">2026</span></div>
+      <p class="role">Founder &amp; lead engineer · seed-funded SaaS</p>
       <p>Real-time product analytics for early-stage SaaS teams. Streams 40k events a minute into live dashboards.</p>
-      <ul class="tags"><li>Next.js</li><li>WebSockets</li><li>ClickHouse</li></ul>
+      <ul class="highlights">
+        <li>Built the ingestion pipeline end to end: edge collectors, a Kafka buffer and ClickHouse materialised views keep p95 dashboard latency under <b>180&nbsp;ms</b>.</li>
+        <li>Designed the websocket fan-out layer so 200 concurrent viewers share one query instead of two hundred.</li>
+        <li>Grew to <b>60 paying teams</b> in six months; own everything from the Postgres schema to the billing flow on Stripe.</li>
+        <li>Zero-downtime migrations across <b>9 services</b> with feature flags and shadow reads before every cutover.</li>
+      </ul>
+      <div class="links"><span>Case study</span><span>Live demo</span><span>Source</span></div>
+      <ul class="tags"><li>Next.js</li><li>WebSockets</li><li>ClickHouse</li><li>Kafka</li><li>Stripe</li></ul>
+      <span class="more">Read the full case study</span>
     </a>
-    <a class="card" href="#contact">
+    <a class="card" href="kirana-cloud.html">
       <div class="cover c2"><div class="receipt"><div><span>Toor dal 1 kg</span><span>₹142</span></div><div><span>Basmati 5 kg</span><span>₹610</span></div><div><span>Stock synced</span><span>✓</span></div></div></div>
       <div class="card-meta"><h3>Kirana Cloud</h3><span class="yr">2025</span></div>
+      <p class="role">Solo builder · open source, MIT</p>
       <p>Inventory and billing for neighbourhood stores. Works offline and syncs when the network returns.</p>
-      <ul class="tags"><li>React Native</li><li>Node.js</li><li>PostgreSQL</li></ul>
+      <ul class="highlights">
+        <li>Conflict-free sync engine merges edits from multiple staff devices without a server round-trip, even after days offline.</li>
+        <li>Barcode scanning and GST-compliant invoices run entirely on-device; a receipt prints in under <b>3 seconds</b> on cheap Bluetooth printers.</li>
+        <li>Used weekly by <b>~900 shops</b> across Pune and Bengaluru; localised into Hindi, Marathi and Kannada.</li>
+        <li>Battery-friendly design: <b>&lt;2% drain</b> per 8-hour shift, tested on ₹6,000 Android devices.</li>
+      </ul>
+      <div class="links"><span>Play Store</span><span>GitHub</span><span>Docs</span></div>
+      <ul class="tags"><li>React Native</li><li>Node.js</li><li>PostgreSQL</li><li>CRDTs</li></ul>
+      <span class="more">Read the full case study</span>
     </a>
-    <a class="card" href="#contact">
+    <a class="card" href="waypoint.html">
       <div class="cover c3"><svg viewBox="0 0 260 170" aria-hidden="true"><g fill="none" stroke="#1D6B67" stroke-width="1.5"><path d="M0 40 Q80 20 140 50 T260 30"/><path d="M0 90 Q70 70 130 100 T260 80"/><path d="M0 140 Q90 120 150 150 T260 130"/></g><path d="M30 130 C70 60 120 140 160 80 S220 50 232 36" fill="none" stroke="#FFD66B" stroke-width="3" stroke-dasharray="7 7"/><circle cx="30" cy="130" r="7" fill="#FFD66B"/><circle cx="232" cy="36" r="9" fill="#FF6A5A" stroke="#FFF1EC" stroke-width="3"/></svg></div>
       <div class="card-meta"><h3>Waypoint</h3><span class="yr">2024</span></div>
+      <p class="role">Side project → 12k monthly users</p>
       <p>A trip planner that works as an installable web app, with shared itineraries and offline maps.</p>
-      <ul class="tags"><li>PWA</li><li>Mapbox</li><li>Supabase</li></ul>
+      <ul class="highlights">
+        <li>Vector tiles are pre-cached per itinerary, so day-two in the Himalayas still renders maps at <b>60 fps</b> with no signal.</li>
+        <li>Real-time collaborative editing with presence cursors, built on Supabase Realtime row subscriptions.</li>
+        <li>Ships as a PWA on iOS, Android and desktop from one codebase — the whole client is under <b>120&nbsp;KB</b> gzipped.</li>
+        <li>Trending on Hacker News and r/travel; <b>1,900 GitHub stars</b> and 40 community route packs within a year.</li>
+      </ul>
+      <div class="links"><span>Trial it</span><span>Write-up</span></div>
+      <ul class="tags"><li>PWA</li><li>Mapbox</li><li>Supabase</li><li>Svelte</li></ul>
+      <span class="more">Read the full case study</span>
     </a>
-    <a class="card" href="#contact">
+    <a class="card" href="inkwell.html">
       <div class="cover c4"><div class="para">¶<span>.</span></div></div>
       <div class="card-meta"><h3>Inkwell</h3><span class="yr">2023</span></div>
+      <p class="role">Contract build for an independent publisher</p>
       <p>A headless markdown CMS for writers, with live collaborative editing and one-click publishing.</p>
-      <ul class="tags"><li>TypeScript</li><li>CRDTs</li><li>AWS</li></ul>
+      <ul class="highlights">
+        <li>Yjs-powered editor handles simultaneous edits, comments and version history without ever locking a document.</li>
+        <li>Publishing pipeline renders 4,000 posts to the CDN in <b>under 40 seconds</b> via incremental static regeneration.</li>
+        <li>Editorial team cut time-from-draft-to-live from a day to roughly <b>ten minutes</b> after launch.</li>
+        <li>Full-text search over a decade of archive with typo-tolerant queries returning in <b>&lt;50&nbsp;ms</b> (Typesense).</li>
+      </ul>
+      <div class="links"><span>Architecture notes</span><span>Contact for access</span></div>
+      <ul class="tags"><li>TypeScript</li><li>CRDTs</li><li>AWS</li><li>Cloudflare</li></ul>
+      <span class="more">Read the full case study</span>
     </a>
   </div>
 </section>

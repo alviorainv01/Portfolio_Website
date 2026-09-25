@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inkwell — Case study · Aarav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Outfit:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --hero:#E0322B; --hero-hi:#F2574A; --hero-lo:#8E1016;
+  --cream:#FFF1EC; --blush:#FFD9CF;
+  --ink:#130A0B; --ink-2:#1C1011; --ink-3:#2A191A; --line:#3A2425;
+  --text:#F7E9E5; --muted:#B89D98; --red:#FF4B3E;
+  --script:"Yellowtail", "Brush Script MT", cursive;
+  --sans:"Outfit", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --gutter:clamp(16px,4vw,56px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--ink); color:var(--text); font:400 17px/1.6 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cream); outline-offset:3px; border-radius:8px}
+.wrap{max-width:900px; margin-inline:auto; padding-inline:var(--gutter)}
+.logo{display:inline-block; margin:calc(env(safe-area-inset-top, 0px) + 26px) 0 0; font:400 34px/1 var(--script); color:var(--cream); text-decoration:none}
+.back{font:400 13px var(--mono); letter-spacing:.1em; color:var(--muted); text-decoration:none; display:inline-flex; gap:8px; align-items:center}
+.back:hover{color:var(--red)}
+.kicker{font:500 12px/1 var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin:0 0 18px}
+h1{font:800 clamp(40px,6.4vw,84px)/1.02 var(--sans); letter-spacing:-.035em; margin:14px 0 0; text-wrap:balance}
+h1 .s{font:400 1.12em/1 var(--script); letter-spacing:0; color:var(--red)}
+.lede{font:300 clamp(19px,2.1vw,25px)/1.5 var(--sans); color:var(--text); max-width:56ch; margin:22px 0 0}
+.hero-band{background:radial-gradient(ellipse 90% 120% at 80% 0%, #FFFFFF, #F4EDE6 45%, #C9BCAC 130%); color:#1C1011; padding-bottom:clamp(48px,7vw,90px)}
+.hero-band .logo{color:#1C1011}
+.hero-band .kicker{color:var(--hero)}
+.hero-band h1 .s{color:var(--hero)}
+.hero-band .back{color:rgba(28,16,17,.6)}
+.hero-band .back:hover{color:#1C1011}
+.meta-strip{display:flex; flex-wrap:wrap; gap:10px 34px; margin-top:34px; font:400 13px var(--mono); color:rgba(28,16,17,.8)}
+.meta-strip b{display:block; font-weight:500; letter-spacing:.14em; text-transform:uppercase; font-size:11px; color:rgba(28,16,17,.5); margin-bottom:4px}
+section{padding-block:clamp(48px,7vw,88px)}
+h2{font:700 clamp(26px,3.4vw,40px)/1.15 var(--sans); letter-spacing:-.025em; margin:0 0 18px}
+h2 .n{font:500 13px var(--mono); color:var(--red); letter-spacing:.16em; display:block; margin-bottom:12px; text-transform:uppercase}
+p{margin:0 0 18px; max-width:64ch}
+p b, li b{color:var(--cream); font-weight:600}
+ul.dots{list-style:none; padding:0; margin:0 0 18px; display:grid; gap:12px}
+ul.dots li{position:relative; padding-left:24px; max-width:62ch}
+ul.dots li::before{content:""; position:absolute; left:2px; top:.55em; width:8px; height:8px; border-radius:50%; background:var(--hero); box-shadow:0 0 0 3px rgba(255,75,62,.18)}
+.stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:8px 0 0}
+.stats div{background:var(--ink-2); border:1px solid var(--line); border-radius:20px; padding:24px}
+.stats .num{font:800 clamp(28px,3.4vw,44px)/1 var(--sans); letter-spacing:-.03em; color:var(--cream)}
+.stats .lbl{font:400 12px var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:10px}
+figure{margin:26px 0}
+figure .cover{aspect-ratio:16/9; border-radius:24px; overflow:hidden; display:grid; place-items:center; background:#F4EDE6; border:1px solid var(--line)}
+.para{font:400 clamp(120px,16vw,200px)/1 Georgia, "Times New Roman", serif; color:#1C1011}
+.para span{color:var(--hero)}
+figcaption{font:400 13px var(--mono); color:var(--muted); margin-top:12px}
+blockquote{margin:26px 0; padding:0 0 0 22px; border-left:3px solid var(--hero); font:300 clamp(19px,2vw,23px)/1.5 var(--sans); color:var(--cream); max-width:52ch}
+.tags{display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:8px 0 0; padding:0}
+.tags li{font:400 12px/1 var(--mono); padding:8px 12px; border-radius:999px; background:var(--ink-2); border:1px solid var(--line); color:var(--muted)}
+.nav-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-block:34px 60px; border-top:1px solid var(--line); font:600 13px/1 var(--sans); letter-spacing:.14em; text-transform:uppercase}
+.nav-row a{text-decoration:none; color:var(--muted); display:inline-flex; gap:10px; align-items:center}
+.nav-row a:hover{color:var(--cream)}
+footer{padding-block:0 44px; font:400 13px var(--mono); color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero-band">
+  <div class="wrap">
+    <a class="logo" href="index.html">Aarav</a>
+    <p style="margin-top:34px"><a class="back" href="index.html#work">← All work</a></p>
+    <p class="kicker">Case study · 2023</p>
+    <h1>Ink<span class="s">well</span></h1>
+    <p class="lede" style="color:rgba(28,16,17,.85)">A headless markdown CMS for an independent publisher — collaborative editing, one-click publishing, a decade of archive behind it.</p>
+    <div class="meta-strip">
+      <span><b>Role</b>Contract engineer</span>
+      <span><b>Timeline</b>Feb → Nov 2023</span>
+      <span><b>Team</b>Me + the editorial lead</span>
+      <span><b>Status</b>Delivered, still running</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+<section>
+  <h2><span class="n">01 · The problem</span>A literary journal stuck in a copy-paste loop</h2>
+  <p>The publisher ran a quarterly journal and a weekly essay site on a stack of Google Docs, a shared drive named FINAL_v3, and a developer who manually pasted HTML between them. One piece took a full day from accepted draft to live page, and version conflicts were resolved by whoever shouted first.</p>
+  <p>The brief was blunt: <b>get draft-to-live under an hour</b>, let three editors work on one piece simultaneously, and never lose a revision — without hiring a dev team to babysit it.</p>
+  <div class="stats">
+    <div><div class="num">~10 min</div><div class="lbl">Draft-to-live after launch</div></div>
+    <div><div class="num">&lt;40 s</div><div class="lbl">Full rebuild, 4,000 posts</div></div>
+    <div><div class="num">&lt;50 ms</div><div class="lbl">Typo-tolerant search</div></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">02 · How it works</span>CRDT editor, static output</h2>
+  <figure>
+    <div class="cover"><div class="para">¶<span>.</span></div></div>
+    <figcaption>Inkwell's mark — the pilcrow is also the keyboard shortcut for the command palette.</figcaption>
+  </figure>
+  <ul class="dots">
+    <li><b>Editing:</b> a Yjs document per piece gives simultaneous edits, inline comments and cursor presence without ever locking a draft; every keystroke lands in append-only history, so "restore last Tuesday" is a single query.</li>
+    <li><b>Publishing:</b> markdown compiles through a typed remark pipeline into incremental static regeneration — only affected pages rebuild, so a publish touches ~20 files, not 4,000. A forced full rebuild still finishes in <b>under 40 seconds</b> on Cloudflare Pages.</li>
+    <li><b>Search:</b> Typesense indexes a decade of archive with typo tolerance and relevance tuned for literary queries (author, theme, issue number).</li>
+    <li><b>Ops:</b> everything on AWS free-tier-adjacent infrastructure — S3 for assets, Lambda for webhooks — because the client could not carry a DevOps bill.</li>
+  </ul>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">03 · Hardest problem</span>Writers are the harshest QA team</h2>
+  <p>Editors rejected the first two prototypes — not for bugs, but because they broke how prose *feels*: autosave flicker mid-sentence, markdown symbols visible while typing, comment threads that interrupted flow. The turning point was rendering everything as clean typographic HTML (a real serif, real small caps) and treating state changes as invisible. After that, adoption wasn't pushed — the editors started training each other.</p>
+  <blockquote>"I forgot I was using software." — managing editor, six weeks in</blockquote>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">04 · Outcome &amp; lessons</span>Handover that actually stuck</h2>
+  <ul class="dots">
+    <li>Draft-to-live dropped from <b>a day to roughly ten minutes</b>; the weekly site now ships two extra pieces per month purely from saved production time.</li>
+    <li>Zero support tickets in the final three months of the contract — the runbook and Loom walkthroughs did their job.</li>
+    <li>Lesson learned: for content tools, <b>typography is UX</b>. Features came second to making the page look like the printed journal.</li>
+    <li>Architecture notes are public; the code itself is private to the publisher — contact me for access arrangements.</li>
+  </ul>
+  <ul class="tags"><li>TypeScript</li><li>Yjs / CRDTs</li><li>AWS</li><li>Cloudflare Pages</li><li>Typesense</li></ul>
+</section>
+
+<div class="nav-row">
+  <a href="waypoint.html">← Previous: Waypoint</a>
+  <a href="index.html#work">Back to all work →</a>
+</div>
+<footer>© 2026 Aarav · Placeholder copy — replace metrics and quotes with real project facts.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kirana Cloud — Case study · Aarav</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Outfit:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --hero:#E0322B; --hero-hi:#F2574A; --hero-lo:#8E1016;
+  --cream:#FFF1EC; --blush:#FFD9CF;
+  --ink:#130A0B; --ink-2:#1C1011; --ink-3:#2A191A; --line:#3A2425;
+  --text:#F7E9E5; --muted:#B89D98; --red:#FF4B3E;
+  --script:"Yellowtail", "Brush Script MT", cursive;
+  --sans:"Outfit", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --gutter:clamp(16px,4vw,56px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--ink); color:var(--text); font:400 17px/1.6 var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cream); outline-offset:3px; border-radius:8px}
+.wrap{max-width:900px; margin-inline:auto; padding-inline:var(--gutter)}
+.logo{display:inline-block; margin:calc(env(safe-area-inset-top, 0px) + 26px) 0 0; font:400 34px/1 var(--script); color:var(--cream); text-decoration:none}
+.back{font:400 13px var(--mono); letter-spacing:.1em; color:var(--muted); text-decoration:none; display:inline-flex; gap:8px; align-items:center}
+.back:hover{color:var(--red)}
+.kicker{font:500 12px/1 var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin:0 0 18px}
+h1{font:800 clamp(40px,6.4vw,84px)/1.02 var(--sans); letter-spacing:-.035em; margin:14px 0 0; text-wrap:balance}
+h1 .s{font:400 1.12em/1 var(--script); letter-spacing:0; color:var(--red)}
+.lede{font:300 clamp(19px,2.1vw,25px)/1.5 var(--sans); color:var(--text); max-width:56ch; margin:22px 0 0}
+.hero-band{background:radial-gradient(ellipse 90% 120% at 80% 0%, #FFD75E, #FFC83D 45%, #C98F14 130%); color:#2A1B0B; padding-bottom:clamp(48px,7vw,90px)}
+.hero-band .kicker{color:#6B4A00}
+.hero-band .back{color:rgba(42,27,11,.7)}
+.hero-band .back:hover{color:#2A1B0B}
+.hero-band h1 .s{color:#8E1016}
+.meta-strip{display:flex; flex-wrap:wrap; gap:10px 34px; margin-top:34px; font:400 13px var(--mono); color:rgba(42,27,11,.85)}
+.meta-strip b{display:block; font-weight:500; letter-spacing:.14em; text-transform:uppercase; font-size:11px; color:rgba(42,27,11,.55); margin-bottom:4px}
+section{padding-block:clamp(48px,7vw,88px)}
+h2{font:700 clamp(26px,3.4vw,40px)/1.15 var(--sans); letter-spacing:-.025em; margin:0 0 18px}
+h2 .n{font:500 13px var(--mono); color:var(--red); letter-spacing:.16em; display:block; margin-bottom:12px; text-transform:uppercase}
+p{margin:0 0 18px; max-width:64ch}
+p b, li b{color:var(--cream); font-weight:600}
+ul.dots{list-style:none; padding:0; margin:0 0 18px; display:grid; gap:12px}
+ul.dots li{position:relative; padding-left:24px; max-width:62ch}
+ul.dots li::before{content:""; position:absolute; left:2px; top:.55em; width:8px; height:8px; border-radius:50%; background:var(--hero); box-shadow:0 0 0 3px rgba(255,75,62,.18)}
+.stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:8px 0 0}
+.stats div{background:var(--ink-2); border:1px solid var(--line); border-radius:20px; padding:24px}
+.stats .num{font:800 clamp(28px,3.4vw,44px)/1 var(--sans); letter-spacing:-.03em; color:var(--cream)}
+.stats .lbl{font:400 12px var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:10px}
+figure{margin:26px 0}
+figure .cover{aspect-ratio:16/9; border-radius:24px; overflow:hidden; display:grid; place-items:center; background:#FFC83D; border:1px solid var(--line)}
+figcaption{font:400 13px var(--mono); color:var(--muted); margin-top:12px}
+.receipt{background:#FFFDF6; color:#2A1B0B; width:52%; padding:18px 20px; border-radius:6px; font:500 12px/2 var(--mono); box-shadow:0 18px 30px -12px rgba(80,40,0,.45); transform:rotate(-3deg)}
+.receipt div{display:flex; justify-content:space-between; border-bottom:1px dashed #D9C9A5}
+.receipt div:last-child{border:0; font-weight:700}
+blockquote{margin:26px 0; padding:0 0 0 22px; border-left:3px solid var(--hero); font:300 clamp(19px,2vw,23px)/1.5 var(--sans); color:var(--cream); max-width:52ch}
+.tags{display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:8px 0 0; padding:0}
+.tags li{font:400 12px/1 var(--mono); padding:8px 12px; border-radius:999px; background:var(--ink-2); border:1px solid var(--line); color:var(--muted)}
+.nav-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-block:34px 60px; border-top:1px solid var(--line); font:600 13px/1 var(--sans); letter-spacing:.14em; text-transform:uppercase}
+.nav-row a{text-decoration:none; color:var(--muted); display:inline-flex; gap:10px; align-items:center}
+.nav-row a:hover{color:var(--cream)}
+footer{padding-block:0 44px; font:400 13px var(--mono); color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero-band">
+  <div class="wrap">
+    <a class="logo" href="index.html" style="color:#2A1B0B">Aarav</a>
+    <p style="margin-top:34px"><a class="back" href="index.html#work">← All work</a></p>
+    <p class="kicker">Case study · 2025</p>
+    <h1>Kirana <span class="s">Cloud</span></h1>
+    <p class="lede" style="color:rgba(42,27,11,.9)">Inventory and billing for neighbourhood stores — built to keep working when the network doesn't.</p>
+    <div class="meta-strip">
+      <span><b>Role</b>Solo builder</span>
+      <span><b>Timeline</b>Mar 2024 → Dec 2025</span>
+      <span><b>License</b>Open source, MIT</span>
+      <span><b>Status</b>~900 weekly shops</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+<section>
+  <h2><span class="n">01 · The problem</span>The counter can't wait for the cloud</h2>
+  <p>A kirana shop runs on a ₹6,000 Android phone, patchy 4G and one overloaded charger. Every SaaS billing tool I trialled assumed the opposite: constant connectivity, desktop-class hardware, English-first forms. When the network dropped mid-sale, the whole till stopped.</p>
+  <p>The design constraint followed directly: <b>the app must be fully functional offline</b>, sync without conflicts when a staff member's phone reconnects days later, and print a GST invoice in seconds on the cheapest Bluetooth printers on the market.</p>
+  <div class="stats">
+    <div><div class="num">~900</div><div class="lbl">Shops using it weekly</div></div>
+    <div><div class="num">&lt;3 s</div><div class="lbl">Scan-to-printed receipt</div></div>
+    <div><div class="num">3</div><div class="lbl">Languages shipped (HI/MR/KN)</div></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">02 · How it works</span>CRDTs where others use retry queues</h2>
+  <figure>
+    <div class="cover"><div class="receipt"><div><span>Toor dal 1 kg</span><span>₹142</span></div><div><span>Basmati 5 kg</span><span>₹610</span></div><div><span>Stock synced</span><span>✓</span></div></div></div>
+    <figcaption>A printed Kirana Cloud bill — generated entirely on-device, then reconciled in the background.</figcaption>
+  </figure>
+  <ul class="dots">
+    <li><b>Local-first data:</b> every device holds a full replica of the shop's stock ledger as a CRDT; edits merge deterministically, so two clerks selling the last packet of dal never double-book it or lose either sale.</li>
+    <li><b>Sync:</b> a thin Node.js/PostgreSQL relay stores op logs and fans them out on reconnect — no server round-trip is ever on the critical path of a sale.</li>
+    <li><b>Scanning:</b> the camera pipeline recognises Indian barcodes and vernacular labels offline; unknown items fall back to a two-tap search that learns from the shop's own history.</li>
+    <li><b>Printing:</b> ESC/POS output tuned for the sub-₹1,500 thermal printers shops actually own — a receipt prints in under <b>3 seconds</b>.</li>
+  </ul>
+  <p>Battery was a first-class metric: an 8-hour shift drains <b>under 2%</b>, verified nightly on a rack of five budget devices via GitHub Actions + Playwright.</p>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">03 · Hardest problem</span>Designing for people who won't read a manual</h2>
+  <p>Early pilots failed quietly: shopkeepers never reported bugs, they just went back to notebooks. The fix was observational — I spent three Saturdays behind counters in Pune. That produced the two features that turned adoption: a <b>voice-speed undo</b> (shake the phone to reverse the last line item) and a daily WhatsApp summary card that shows sales and low stock without opening the app.</p>
+  <blockquote>"Pehle register tha, ab phone hai — dono same speed." (Notebook or phone, same speed.) — pilot shop, Kothrud, Pune</blockquote>
+</section>
+
+<section style="padding-top:0">
+  <h2><span class="n">04 · Outcome &amp; lessons</span>Open source as an acquisition channel</h2>
+  <ul class="dots">
+    <li><b>~900 weekly shops</b> across Pune and Bengaluru; growth driven by shop-owner word of mouth, not marketing.</li>
+    <li>MIT licensing paid off twice: a college student contributed the Kannada localisation, and a payments startup now funds the sync relay's hosting.</li>
+    <li>Lesson learned: in local-first apps, <b>conflict UX matters more than conflict resolution</b> — merges are automatic, but showing *what* merged is what earns trust.</li>
+    <li>Next: UPI payment-request links baked into invoices, and a wholesale-supplier reorder view.</li>
+  </ul>
+  <ul class="tags"><li>React Native</li><li>Node.js</li><li>PostgreSQL</li><li>CRDTs</li><li>ESC/POS</li></ul>
+</section>
+
+<div class="nav-row">
+  <a href="pulseboard.html">← Previous: Pulseboard</a>
+  <a href="waypoint.html">Next: Waypoint →</a>
+</div>
+<footer>© 2026 Aarav · Placeholder copy — replace metrics and quotes with real project facts.</footer>
+</main>
+</body>
+</html>
